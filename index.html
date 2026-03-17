@@ -10,12 +10,15 @@
     white-space: pre;
     margin: 0;
   }#output {
-padding: 20px;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
 }
 </style>
 
 </head>
-<body><pre id="output"></pre><script>
+<body><div id="output"></div><script>
 const cake = String.raw
 
 
@@ -35,15 +38,15 @@ const cake = String.raw
 const wish = String.raw
 
 
-FELIZ CUMPLEAÑOS BANILUUUU!
+FELIZ CUMPLEAÑOS 🎉
 
 
 ;
 
 async function escribir(texto) {
   const output = document.getElementById("output");
-  for (let letra of texto) {
-    output.textContent += letra;
+  for (let i = 0; i < texto.length; i++) {
+    output.innerHTML += texto[i];
     await new Promise(r => setTimeout(r, 10));
   }
 }
